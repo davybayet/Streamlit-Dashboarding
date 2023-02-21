@@ -45,8 +45,8 @@ fig_ecdf = px.ecdf(df_program, x="Math Result")
 st.plotly_chart(fig_ecdf)
 
 # Add a line plot of math results by date and gender
-st.header("Math Results by Mode and Gender Line Plot")
-fig_line = px.line(df_program, x="Mode", y="Math Result", color="Gender", markers=True)
+st.header("Math Results by Mode Line Plot")
+fig_line = px.line(df_program, x="Mode", y="Math Result", markers=True)
 st.plotly_chart(fig_line)
 
 
