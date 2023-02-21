@@ -9,13 +9,13 @@ import pandas as pd
 import plotly.express as px
 
 # Load data
-df = pd.read_csv('s23-recrutement-until-now.csv', encoding="ISO-8859-1")
+df = pd.read_csv('a22-recrutement-analytics.csv', encoding="ISO-8859-1")
 
 # Set up the app
-st.set_page_config(page_title='S23 Recruitment Dashboard')
+st.set_page_config(page_title='A22 Recruitment Dashboard')
 
 # Add a title to the page
-st.title('Analytics Dashboard of Recruitment Cohorte S23')
+st.title('Analytics Dashboard of Recruitment Cohorte A22')
 
 # Allow the user to choose a program
 program_chosen = st.selectbox("Choose program of interest:", df["Program"].unique())
