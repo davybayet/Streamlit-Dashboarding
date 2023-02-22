@@ -9,13 +9,13 @@ import pandas as pd
 import plotly.express as px
 
 # Load data
-df = pd.read_csv('a22-recrutement-analytics.csv', encoding="ISO-8859-1")
+df = pd.read_csv('all-cohorts-analytics.csv', encoding="ISO-8859-1")
 
 # Set up the app
-st.set_page_config(page_title='A22 Recruitment Dashboard')
+st.set_page_config(page_title='All Cohorts Recruitment Dashboard')
 
 # Add a title to the page
-st.title('Analytics Dashboard of Recruitment Cohorte A22')
+st.title('Analytics Dashboard of Recruitment for all Cohortes')
 
 # Allow the user to choose a program
 program_chosen = st.selectbox("Choose program of interest:", df["Program"].unique())
@@ -33,6 +33,10 @@ st.header("Math Results Strip Plot by Nationality")
 fig_strip = px.strip(df_program, x="Math Result", y="Nationality")
 st.plotly_chart(fig_strip)
 
+# Add a pie plot of nationality by mode
+st.header("Nationality by Mode Pie Plot")
+fig_pie = px.pie(df_program, values="Nationality", names="Mode")
+st.plotly_chart(fig_pie)
 
 # Add a sunburst plot of programs, nationalities, and cities
 df_sburst = df_program[df_program["Mode"].isin(["Alternant","Traditional","SPOC"])]
