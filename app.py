@@ -33,6 +33,11 @@ st.header("Math Results Strip Plot by Nationality")
 fig_strip = px.strip(df_program, x="Math Result", y="Nationality")
 st.plotly_chart(fig_strip)
 
+# Add a pie chart of nationality
+st.header("Nationality Pie Chart")
+fig_pie = px.pie(df_program, values='Nationality', names='Nationality')
+st.plotly_chart(fig_pie)
+
 # Add a sunburst plot of programs, nationalities, and cities
 df_sburst = df_program[df_program["Mode"].isin(["Alternant","Traditional","SPOC"])]
 st.header("Programs, Nationalities, and Cities Sunburst Plot")
