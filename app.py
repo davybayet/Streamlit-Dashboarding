@@ -34,8 +34,8 @@ fig_strip = px.strip(df_program, x="Birth Date", y="Nationality")
 st.plotly_chart(fig_strip)
 
 # Add a pie plot of nationality by mode
-st.header("Nationality by Mode Pie Plot")
-fig_pie = px.pie(df_program, values="Birth Date", names="Nationality")
+st.header("Nationality Pie Plot")
+fig_pie = px.pie(df_program, values="Nationality")
 st.plotly_chart(fig_pie)
 
 # Add a sunburst plot of programs, nationalities, and cities
